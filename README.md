@@ -10,7 +10,7 @@
 - Python
 - HTML
 - CSS
-- Javascript
+- JS
 - MySQL
 - SQLite
 - PHP
