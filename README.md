@@ -44,7 +44,7 @@ Also to dive into AI and Android App Devolopment
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/SumitKumarKar01)](https://github.com/SumitKumarKar01)
 [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white&link=https://www.researchgate.net/profile/Sumit-Kumar-Kar-3)](https://www.researchgate.net/profile/Sumit-Kumar-Kar-3)
 [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white&link=https://orcid.org/0009-0000-9469-3108)](https://orcid.org/0009-0000-9469-3108)
-
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:sumitkumarkar01@gmail.com)](mailto:sumitkumarkar01@gmail.com)
 
 <!---
 SumitKumarKar01/SumitKumarKar01 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
