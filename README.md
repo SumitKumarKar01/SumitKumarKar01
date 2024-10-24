@@ -9,6 +9,8 @@
 - [Rokkha](https://github.com/SumitKumarKar01/rokkha)
 
 ## My Skills
+![My Skills](https://skillicons.dev/icons?i=c,cpp,java,kotlin,python,html,css,js,mysql,sqlite,php)
+<!--
 - C 
 - C++
 - Java
@@ -21,7 +23,7 @@
 - SQLite
 - PHP
 - Android XML
-
+-->
 ## Technologies I Learnt
 - Git
 - Github
