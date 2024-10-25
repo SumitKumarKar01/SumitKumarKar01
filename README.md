@@ -10,6 +10,7 @@
 
 ## My Skills
 ![My Skills](https://skillicons.dev/icons?i=c,cpp,java,kotlin,python,html,css,js,mysql,sqlite,php)
+
 <!--
 - C 
 - C++
@@ -24,19 +25,29 @@
 - PHP
 - Android XML
 -->
+
 ## Technologies I Learnt
+![My Skills](https://skillicons.dev/icons?i=git,github,md,latex,anaconda)
+
+<!--
 - Git
 - Github
 - Markdown
 - LaTex
 - Anaconda
+-->
 
 ## Softwares I use
+
+![My Skills](https://skillicons.dev/icons?i=vscode,visualstudio,androidstudio,obsidian)
+
+<!--
 - VS Code
 - Visual Studio
 - Android Studio
 - Adobe Creative Cloud Suite
 - Microsoft Office Suite
+-->
 
 ## My 2024 Goals
 To learn JavaScript FrontEnd Libraries and Frameworks, Also learn about CSS Frameworks. And Finally getting familiar with Node JS for BackEnd. 
@@ -49,6 +60,7 @@ Also to dive into AI and Android App Devolopment
 [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white&link=https://www.researchgate.net/profile/Sumit-Kumar-Kar-3)](https://www.researchgate.net/profile/Sumit-Kumar-Kar-3)
 [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white&link=https://orcid.org/0009-0000-9469-3108)](https://orcid.org/0009-0000-9469-3108)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:sumitkumarkar01@gmail.com)](mailto:sumitkumarkar01@gmail.com)
+
 
 <!---
 SumitKumarKar01/SumitKumarKar01 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
