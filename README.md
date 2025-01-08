@@ -7,6 +7,7 @@
 
 ## My Projects
 - [Rokkha](https://github.com/SumitKumarKar01/rokkha)
+[Nari](https://github.com/SumitKumarKar01/NARI)
 
 ## My Skills
 ![My Skills](https://skillicons.dev/icons?i=c,cpp,java,kotlin,python,html,css,js,mysql,sqlite,php)
@@ -49,9 +50,10 @@
 - Microsoft Office Suite
 -->
 
-## My 2024 Goals
-To learn JavaScript FrontEnd Libraries and Frameworks, Also learn about CSS Frameworks. And Finally getting familiar with Node JS for BackEnd. 
-Also to dive into AI and Android App Devolopment
+## My 2025 Goals
+- Learn About LLM and RAG.
+- Create Cross Platform Applications
+- Dive into Web Applications
 
 
 ## Connect with Me
