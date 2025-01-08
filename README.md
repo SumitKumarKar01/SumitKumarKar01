@@ -7,7 +7,7 @@
 
 ## My Projects
 - [Rokkha](https://github.com/SumitKumarKar01/rokkha)
-[Nari](https://github.com/SumitKumarKar01/NARI)
+- [Nari](https://github.com/SumitKumarKar01/NARI)
 
 ## My Skills
 ![My Skills](https://skillicons.dev/icons?i=c,cpp,java,kotlin,python,html,css,js,mysql,sqlite,php)
