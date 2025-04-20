@@ -1,5 +1,6 @@
 ## About Me
 - 👋 Hi, I’m Sumit Kumar Kar
+- CSE Graduate🎓 | Research Assistant🔬
 - I love learning about new technologies
 
 ## My Research Papers
