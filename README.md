@@ -1,7 +1,7 @@
 ## About Me
 - 👋 Hi, I’m Sumit Kumar Kar
 - CSE Graduate🎓 | Research Assistant🔬
-- I love learning about new technologies
+- I love learning about new technologies 💻
 
 ## My Research Papers
 - [A Novel Approach for Recognizing Real-Time American Sign Language (ASL) Using the Hand Landmark Distance and Machine Learning Algorithms](https://doi.org/10.1109/wiecon-ece60392.2023.10456414)
