@@ -9,18 +9,18 @@
 ## My Projects
 ### [Rokkha](http://rokkha.sumit.com.bd)
 
-– Utilized the GPS sensor in Android devices to collect location data without relying on internet connectivity.
-– Implemented the Android SMS API to send location information.
-– Designed the application to function independently of internet connectivity
-– Technology Used: Kotlin, Android XML, SQLite
+- Utilized the GPS sensor in Android devices to collect location data without relying on internet connectivity.
+- Implemented the Android SMS API to send location information.
+- Designed the application to function independently of internet connectivity
+- Technology Used: Kotlin, Android XML, SQLite.
 - [Github](https://github.com/SumitKumarKar01/Rokkha)
 
 ### [Nari](http://nari.sumit.com.bd)
 
-– Developed the app using Kotlin, ensuring concise syntax and enhanced safety for clean and efficient code.
-– Integrated Firebase Authentication for secure user login and registration processes.
-– Employed Firebase Firestore for flexible data management and real-time database functionalities.
-– Technology Used: Kotlin, Jetpack Compose, Material Design 3, Rooms, Firebase, SQLite.
+- Developed the app using Kotlin, ensuring concise syntax and enhanced safety for clean and efficient code.
+- Integrated Firebase Authentication for secure user login and registration processes.
+- Employed Firebase Firestore for flexible data management and real-time database functionalities.
+- Technology Used: Kotlin, Jetpack Compose, Material Design 3, Rooms, Firebase, SQLite.
 - [Github](https://github.com/SumitKumarKar01/Nari)
   
 ## My Skills
