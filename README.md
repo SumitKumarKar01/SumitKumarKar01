@@ -14,7 +14,7 @@
 - Implemented the Android SMS API to send location information.
 - Designed the application to function independently of internet connectivity
 - Technology Used: Kotlin, Android XML, SQLite.
-- [Github](https://github.com/SumitKumarKar01/Rokkha)
+- [Github](https://github.com/SumitKumarKar01/Rokkha) [Research Paper](https://dl.acm.org/doi/pdf/10.1145/3723178.3723190)
 
 ### [Nari](http://nari.sumit.com.bd)
 
