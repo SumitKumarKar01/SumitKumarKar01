@@ -56,18 +56,25 @@
       color: #007bff;
     }
 
-    .mobile-menu-toggle {
-      display: none;
+    .mobile-menu-toggle,
+    .mobile-close-toggle {
+      display: flex;
       flex-direction: column;
-      cursor: pointer;
-      padding: 5px;
+      justify-content: center;
+      align-items: center;
       position: absolute;
-      left: 20px;
       top: 50%;
+      left: 20px;
       transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      z-index: 1101;
+      padding: 0;
+      margin: 0;
       -webkit-tap-highlight-color: transparent; /* For Chrome/Safari on Android */
       -webkit-touch-callout: none;             /* Prevents callout menu on long tap */
       user-select: none;
+    
     }
 
     .mobile-menu-toggle span {
@@ -76,25 +83,6 @@
       background-color: #333;
       margin: 3px 0;
       transition: 0.3s;
-    }
-
-    .mobile-close-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      padding: 10px;
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1101;
-      width: 40px;
-      height: 40px;
-      -webkit-tap-highlight-color: transparent; /* For Chrome/Safari on Android */
-      -webkit-touch-callout: none;             /* Prevents callout menu on long tap */
-      user-select: none;
     }
 
     .mobile-close-toggle span {
@@ -351,6 +339,10 @@
     }
 
     @media (max-width: 768px) {
+      nav {
+        height: 60px; /* Ensures consistent nav height */
+        align-items: center; /* Vertically centers the hamburger */
+      }
       nav ul {
         display: none;
       }
@@ -361,13 +353,11 @@
 
       .mobile-menu-toggle {
         display: flex;
-        padding: 0px;
-        margin: 20px 0Px; 
+         
       }
       .mobile-close-toggle {
         display: none; 
-        padding: 0px;
-        margin: 20px 0Px;
+        
       }
 
       .mobile-nav.active {
@@ -572,14 +562,17 @@
       const mobileNav = document.getElementById('mobileNav');
       const mobileBackdrop = document.getElementById('mobileBackdrop');
       const closeToggle = document.querySelector('.mobile-close-toggle');
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
 
       mobileNav.classList.toggle('active');
       mobileBackdrop.classList.toggle('active');
 
       if (mobileNav.classList.contains('active')) {
         closeToggle.style.display = 'flex';
+        menuToggle.style.display = 'none';
       } else {
         closeToggle.style.display = 'none';
+        menuToggle.style.display = 'flex';
       }
     }
 
@@ -587,11 +580,14 @@
       const mobileNav = document.getElementById('mobileNav');
       const mobileBackdrop = document.getElementById('mobileBackdrop');
       const closeToggle = document.querySelector('.mobile-close-toggle');
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
 
       mobileNav.classList.remove('active');
       mobileBackdrop.classList.remove('active');
       closeToggle.style.display = 'none';
+      menuToggle.style.display = 'flex';
     }
+
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
