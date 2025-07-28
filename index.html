@@ -21,7 +21,7 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 30px;
     }
 
     header {
@@ -231,7 +231,18 @@
 
     .section {
       padding: 3rem 0;
-      border-bottom: 2px solid #e9ecef;
+      position: relative;
+    }
+
+    .section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      height: 2px;
+      background-color: #e9ecef;
     }
 
     .section h2 {
