@@ -65,6 +65,9 @@
       left: 20px;
       top: 50%;
       transform: translateY(-50%);
+      -webkit-tap-highlight-color: transparent; /* For Chrome/Safari on Android */
+      -webkit-touch-callout: none;             /* Prevents callout menu on long tap */
+      user-select: none;
     }
 
     .mobile-menu-toggle span {
@@ -89,6 +92,9 @@
       z-index: 1101;
       width: 40px;
       height: 40px;
+      -webkit-tap-highlight-color: transparent; /* For Chrome/Safari on Android */
+      -webkit-touch-callout: none;             /* Prevents callout menu on long tap */
+      user-select: none;
     }
 
     .mobile-close-toggle span {
@@ -342,13 +348,6 @@
       display: flex;
       justify-content: flex-end;
       margin-top: 2rem;
-    }
-
-    .mobile-menu-toggle,
-    .mobile-close-toggle {
-      -webkit-tap-highlight-color: transparent; /* For Chrome/Safari on Android */
-      -webkit-touch-callout: none;             /* Prevents callout menu on long tap */
-      user-select: none;                       /* Prevents text selection */
     }
 
     @media (max-width: 768px) {
