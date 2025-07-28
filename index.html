@@ -58,7 +58,7 @@
 
     .mobile-menu-toggle,
     .mobile-close-toggle {
-      display: flex;
+      display: none; /* Hidden by default on desktop */
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -353,11 +353,18 @@
 
       .mobile-menu-toggle {
         display: flex;
-         
       }
+
+      .mobile-menu-toggle.hide {
+        display: none;
+      }
+      
       .mobile-close-toggle {
         display: none; 
-        
+      }
+
+      .mobile-close-toggle.show {
+        display: flex;
       }
 
       .mobile-nav.active {
@@ -568,11 +575,11 @@
       mobileBackdrop.classList.toggle('active');
 
       if (mobileNav.classList.contains('active')) {
-        closeToggle.style.display = 'flex';
-        menuToggle.style.display = 'none';
+        closeToggle.classList.add('show');
+        menuToggle.classList.add('hide');
       } else {
-        closeToggle.style.display = 'none';
-        menuToggle.style.display = 'flex';
+        closeToggle.classList.remove('show');
+        menuToggle.classList.remove('hide');
       }
     }
 
@@ -584,8 +591,8 @@
 
       mobileNav.classList.remove('active');
       mobileBackdrop.classList.remove('active');
-      closeToggle.style.display = 'none';
-      menuToggle.style.display = 'flex';
+      closeToggle.classList.remove('show');
+      menuToggle.classList.remove('hide');
     }
 
 
