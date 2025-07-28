@@ -344,6 +344,13 @@
       margin-top: 2rem;
     }
 
+    .mobile-menu-toggle,
+    .mobile-close-toggle {
+      -webkit-tap-highlight-color: transparent; /* For Chrome/Safari on Android */
+      -webkit-touch-callout: none;             /* Prevents callout menu on long tap */
+      user-select: none;                       /* Prevents text selection */
+    }
+
     @media (max-width: 768px) {
       nav ul {
         display: none;
@@ -425,6 +432,7 @@
         height: 150px;
       }
     }
+    
   </style>
 </head>
 <body>
