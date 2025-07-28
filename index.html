@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sumit Kumar Kar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 5px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    .mobile-close-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1101;
+      width: 40px;
+      height: 40px;
+    }
+
+    .mobile-close-toggle span {
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      transition: 0.3s ease;
+      border-radius: 2px;
+    }
+
+    /* Rotate bars to make an "X" */
+    .mobile-close-toggle span:first-child {
+      transform: rotate(45deg);
+    }
+
+    .mobile-close-toggle span:last-child {
+      transform: rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding-top: 80px;
+    }
+
+    .mobile-nav ul {
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+    }
+
+    .mobile-nav li {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .mobile-nav li:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      display: block;
+      padding: 1.2rem 2rem;
+      text-align: left;
+      font-size: 1.1rem;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      background-color: #f8f9fa;
+      color: #007bff;
+      padding-left: 2.5rem;
+    }
+
+    .mobile-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+
+    .mobile-backdrop.active {
+      display: block;
+    }
+
+    .hero {
+      padding: 8rem 0;
+      text-align: center;
+    }
+
+    .profile-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #333;
+      border-radius: 50%;
+      background: #f8f9fa;
+      flex-shrink: 0;
+    }
+
+    .hero-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 200px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .hero-content p {
+      font-size: 1.8rem;
+      color: #666;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .btn,
+    .see-more-btn {
+       text-decoration: none;
+      padding: 12px 24px;
+      border: 2px solid #333;
+      background: transparent;
+      color: #333;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover,
+    .see-more-btn:hover {
+      background: #333;
+      color: white;
+    }
+
+    .section {
+      padding: 3rem 0;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .experience-content {
+      max-width: 600px;
+    }
+
+    .experience-bar {
+      height: 12px;
+      background: #ddd;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+    }
+
+    .experience-bar:nth-child(1) {
+      width: 100%;
+    }
+
+    .experience-bar:nth-child(2) {
+      width: 75%;
+    }
+
+    .experience-bar:nth-child(3) {
+      width: 60%;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      border: 2px solid #ddd;
+      padding: 2rem;
+      background: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-placeholder {
+      height: 12px;
+      background: #ddd;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+    }
+
+    .card-placeholder:nth-child(1) {
+      width: 80%;
+    }
+
+    .card-placeholder:nth-child(2) {
+      width: 100%;
+    }
+
+    .card-placeholder:nth-child(3) {
+      width: 60%;
+    }
+
+    .photography {
+      padding: 3rem 0;
+    }
+
+    .photography-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .photography h2 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+    }
+
+    .photo-grid {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .photo-placeholder {
+      width: 150px;
+      height: 120px;
+      border: 2px solid #ddd;
+      background: #f8f9fa;
+    }
+
+    .read-more-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      header {
+      box-shadow: none;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+        padding: 0px;
+        margin: 20px 0Px; 
+      }
+      .mobile-close-toggle {
+        display: none; 
+        padding: 0px;
+        margin: 20px 0Px;
+      }
+
+      .mobile-nav.active {
+        display: block;
+      }
+
+      .profile-container {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .hero-content {
+        height: auto;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photography-container {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .photo-grid {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .read-more-container {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .photo-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .photo-placeholder {
+        width: 200px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="mobile-close-toggle" onclick="closeMobileMenu()">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div class="mobile-backdrop" id="mobileBackdrop" onclick="closeMobileMenu()"></div>
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#experience" onclick="closeMobileMenu()">Experience</a></li>
+        <li><a href="#research" onclick="closeMobileMenu()">Research</a></li>
+        <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+        <li><a href="#blog" onclick="closeMobileMenu()">Blog</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="profile-container">
+          <div class="profile-image"></div>
+          <div class="hero-content">
+            <h1>Sumit Kumar Kar</h1>
+            <p>AI Researcher & Android Developer</p>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn">View My Work</a>
+              <a href="#" class="btn">Download CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="border-bottom: 2px solid #e9ecef;"></div>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h2>Experience</h2>
+        </div>
+        <div class="experience-content">
+          <div class="experience-bar"></div>
+          <div class="experience-bar"></div>
+          <div class="experience-bar"></div>
+        </div>
+        <div class="read-more-container">
+          <button class="see-more-btn">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-header">
+          <h2>Research Papers</h2>
+        </div>
+        <div class="card-grid">
+          <div class="card"><div class="card-placeholder"></div><div class="card-placeholder"></div><div class="card-placeholder"></div></div>
+          <div class="card"><div class="card-placeholder"></div><div class="card-placeholder"></div><div class="card-placeholder"></div></div>
+        </div>
+        <div class="read-more-container">
+          <button class="see-more-btn">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+        </div>
+        <div class="card-grid">
+          <div class="card"><div class="card-placeholder"></div><div class="card-placeholder"></div><div class="card-placeholder"></div></div>
+          <div class="card"><div class="card-placeholder"></div><div class="card-placeholder"></div><div class="card-placeholder"></div></div>
+        </div>
+        <div class="read-more-container">
+          <button class="see-more-btn">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="section-header">
+          <h2>Blogs</h2>
+        </div>
+        <div class="card-grid">
+          <div class="card"><div class="card-placeholder"></div><div class="card-placeholder"></div><div class="card-placeholder"></div></div>
+          <div class="card"><div class="card-placeholder"></div><div class="card-placeholder"></div><div class="card-placeholder"></div></div>
+        </div>
+        <div class="read-more-container">
+          <button class="see-more-btn">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="photography" id="photography">
+  <div class="container">
+    <div class="section-header">
+      <h2>Photography</h2>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-placeholder"></div>
+      <div class="photo-placeholder"></div>
+      <div class="photo-placeholder"></div>
+      <div class="photo-placeholder"></div>
+    </div>
+    <div class="read-more-container">
+      <button class="see-more-btn">See More</button>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <script>
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileBackdrop = document.getElementById('mobileBackdrop');
+      const closeToggle = document.querySelector('.mobile-close-toggle');
+
+      mobileNav.classList.toggle('active');
+      mobileBackdrop.classList.toggle('active');
+
+      if (mobileNav.classList.contains('active')) {
+        closeToggle.style.display = 'flex';
+      } else {
+        closeToggle.style.display = 'none';
+      }
+    }
+
+    function closeMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileBackdrop = document.getElementById('mobileBackdrop');
+      const closeToggle = document.querySelector('.mobile-close-toggle');
+
+      mobileNav.classList.remove('active');
+      mobileBackdrop.classList.remove('active');
+      closeToggle.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+  </script>
+</body>
+</html>
