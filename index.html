@@ -360,6 +360,11 @@
 
       header {
       box-shadow: none;
+      transition: box-shadow 0.3s ease;
+      }
+
+      header.scrolled {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
       .mobile-menu-toggle {
@@ -610,6 +615,16 @@
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
         closeMobileMenu();
+      }
+    });
+
+    // Add scroll effect for mobile header
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
     });
   </script>
