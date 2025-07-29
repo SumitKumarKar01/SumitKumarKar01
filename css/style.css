@@ -450,7 +450,7 @@ nav a:hover {
   }
   
   .experience-timeline::before {
-    left: 0.12rem;
+    left: 30px;
     transform: none;
     top: 1rem;
   }
@@ -458,7 +458,7 @@ nav a:hover {
   .experience-item {
     flex-direction: column !important;
     align-items: flex-start;
-    margin-left: 2rem;
+    margin-left: 60px;
     margin-bottom: 2rem;
   }
   
