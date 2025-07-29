@@ -214,6 +214,98 @@ nav a:hover {
 .section-header {
   margin-bottom: 2rem;
 }
+
+.experience-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #007bff;
+  transform: translateX(-50%);
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.experience-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.experience-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.experience-date {
+  flex: 0 0 150px;
+  text-align: center;
+  font-weight: 600;
+  color: #007bff;
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.experience-content {
+  flex: 1;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 2rem;
+  position: relative;
+  border-left: 4px solid #007bff;
+}
+
+.experience-content h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-content h4 {
+  color: #007bff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.experience-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.experience-mode {
+  margin-top: 1rem;
+}
+
+.mode-tag {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mode-tag.hybrid {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
 .experience-content {
   max-width: 600px;
 }
@@ -352,6 +444,48 @@ nav a:hover {
   }
   .read-more-container {
     justify-content: center;
+  }
+  
+  .experience-timeline::before {
+    left: 30px;
+    transform: none;
+  }
+  
+  .experience-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+    margin-left: 60px;
+    margin-bottom: 2rem;
+  }
+  
+  .experience-date {
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    flex: none;
+    width: auto;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    position: relative;
+  }
+  
+  .experience-date::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #007bff;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #007bff;
+  }
+  
+  .experience-content {
+    margin: 0;
+    width: 100%;
+    padding: 1.5rem;
   }
 }
 @media (max-width: 480px) {
