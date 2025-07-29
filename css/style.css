@@ -9,6 +9,9 @@ body {
   color: #2c3e50;
   background-color: #fff;
 }
+a {
+  text-decoration: none;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -447,7 +450,7 @@ nav a:hover {
   }
   
   .experience-timeline::before {
-    left: 30px;
+    left: 0.12rem;
     transform: none;
     top: 1rem;
   }
@@ -455,7 +458,7 @@ nav a:hover {
   .experience-item {
     flex-direction: column !important;
     align-items: flex-start;
-    margin-left: 60px;
+    margin-left: 2rem;
     margin-bottom: 2rem;
   }
   
@@ -501,5 +504,6 @@ nav a:hover {
     width: 200px;
     height: 150px;
   }
+  
 }
     
