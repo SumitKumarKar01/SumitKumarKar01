@@ -515,22 +515,25 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
-  background: #f8f9fa;
-  border: 2px solid #2c3e50;
-  border-radius: 50%;
-  color: #2c3e50;
-  font-size: 1.2rem;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 1.8rem;
   transition: all 0.3s ease;
   cursor: help;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tech-icon:hover {
-  background: #2c3e50;
-  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: #2c3e50;
+}
+
+.tech-icon i {
+  font-size: 1.8rem;
 }
 
 .tech-tag {
