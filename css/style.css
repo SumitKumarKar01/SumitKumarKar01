@@ -308,12 +308,10 @@ nav a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.mode-tag{
   background: #2c3e50;
   color: white;
 }
+
 .experience-content {
   max-width: 600px;
 }
@@ -362,6 +360,76 @@ nav a:hover {
 .card-placeholder:nth-child(3) {
   width: 60%;
 }
+
+.research-item {
+  position: relative;
+}
+
+.research-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.status-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-tag.published {
+  background: #2c3e50;
+  color: white;
+}
+
+.research-title {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  padding-right: 4rem;
+}
+
+.research-conference h4 {
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.research-date {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.research-description {
+  color: #666;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.research-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.keyword-tag {
+  background: #f8f9fa;
+  color: #2c3e50;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #e9ecef;
+}
+
 .photography {
   padding: 3rem 0;
 }
