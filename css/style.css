@@ -430,6 +430,133 @@ nav a:hover {
   border: 1px solid #e9ecef;
 }
 
+.project-item {
+  position: relative;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.project-title {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.4;
+  flex: 1;
+  margin: 0;
+}
+
+.github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #2c3e50;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.github-btn:hover {
+  background: #1a252f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.github-btn i {
+  font-size: 1.2rem;
+}
+
+.project-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.project-details li {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.project-details li::before {
+  content: '•';
+  color: #2c3e50;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-technologies::before {
+  content: "Built with: ";
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+.tech-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f8f9fa;
+  color: #2c3e50;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #e9ecef;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  background: #2c3e50;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.tech-icon i {
+  font-size: 1rem;
+}
+
+.tech-icon::after {
+  display: none;
+}
+
+.tech-tag {
+  background: #2c3e50;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 .photography {
   padding: 3rem 0;
 }
