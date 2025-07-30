@@ -310,8 +310,8 @@ nav a:hover {
   letter-spacing: 0.5px;
 }
 
-.mode-tag.hybrid {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+.mode-tag{
+  background: #2c3e50;
   color: white;
 }
 .experience-content {
