@@ -101,6 +101,8 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   z-index: 1000;
   padding-top: 80px;
 }
@@ -189,6 +191,7 @@ nav a:hover {
    text-decoration: none;
   padding: 12px 24px;
   border: 2px solid #2c3e50;
+  border-radius: 8px;
   background: transparent;
   color: #2c3e50;
   font-weight: 500;
@@ -271,11 +274,17 @@ nav a:hover {
   flex: 1;
   background: #fff;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ddd;
+  border-radius: 12px;
   margin: 0 2rem;
   position: relative;
   border-left: 4px solid #2c3e50;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .experience-content h3 {
@@ -339,6 +348,7 @@ nav a:hover {
   border: 2px solid #ddd;
   padding: 2rem;
   background: #fff;
+  border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
@@ -703,8 +713,8 @@ nav a:hover {
   flex: 0 0 320px; /* Fixed width that ensures scrolling is needed */
   min-width: 320px; /* Ensure minimum width is maintained */
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ddd;
+  border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   scroll-snap-align: start;
@@ -713,7 +723,7 @@ nav a:hover {
 
 .photo-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .photo-placeholder {
@@ -722,7 +732,7 @@ nav a:hover {
   margin: 1rem;
   border: 2px solid #ddd;
   background: #f8f9fa;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
