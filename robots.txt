@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /README.md
+Allow: /index.html
+
+# Sitemap
+Sitemap: https://sumit.com.bd/sitemap.xml
+
+# Optional: Block access to certain files
+Disallow: /js/
+Disallow: /css/
+Disallow: /.git/ 
+Disallow: /CNAME
