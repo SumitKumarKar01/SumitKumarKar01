@@ -677,13 +677,79 @@ nav a:hover {
 }
 .photo-grid {
   display: flex;
-  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  user-select: none; /* Prevent text selection while dragging */
 }
+
+.photo-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.photo-grid.dragging {
+  scroll-snap-type: none; /* Disable snap while dragging */
+}
+
+.photo-grid.dragging .photo-card {
+  pointer-events: none; /* Prevent hover effects while dragging */
+}
+
+.photo-card {
+  flex: 0 0 320px; /* Fixed width that ensures scrolling is needed */
+  min-width: 320px; /* Ensure minimum width is maintained */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  margin: 1rem 0rem;
+}
+
+.photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
 .photo-placeholder {
-  width: 150px;
-  height: 120px;
+  width: calc(100% - 2rem);
+  height: 220px; /* Consistent height across all devices */
+  margin: 1rem;
   border: 2px solid #ddd;
   background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.photo-placeholder::before {
+  content: "Image Preview";
+}
+
+.photo-caption {
+  padding: 1.5rem;
+}
+
+.photo-caption h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.photo-caption p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
 }
 .read-more-container {
   display: flex;
@@ -746,9 +812,31 @@ nav a:hover {
     gap: 2rem;
   }
   .photo-grid {
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .photo-card {
+    flex: 0 0 calc(100vw - 5rem); /* Show most of one card with peek of next */
+    max-width: 280px;
+  }
+  
+  .photo-placeholder {
+    height: 220px; /* Same height as desktop */
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+  
+  .photo-caption {
+    padding: 1.5rem;
+  }
+  
+  .photo-caption h4 {
+    font-size: 1rem;
+  }
+  
+  .photo-caption p {
+    font-size: 0.85rem;
   }
   .read-more-container {
     justify-content: center;
@@ -813,14 +901,32 @@ nav a:hover {
   .container {
     padding: 0 15px;
   }
+  
   .photo-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .photo-placeholder {
-    width: 200px;
-    height: 150px;
+    padding: 0 0.5rem;
   }
   
+  .photo-card {
+    flex: 0 0 calc(100vw - 4rem); /* Show one card with small peek of next */
+    max-width: 250px;
+  }
+  
+  .photo-placeholder {
+    height: 220px; /* Same height as desktop and tablet */
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+  
+  .photo-caption {
+    padding: 1.5rem;
+  }
+  
+  .photo-caption h4 {
+    font-size: 0.9rem;
+  }
+  
+  .photo-caption p {
+    font-size: 0.8rem;
+  }
 }
     
