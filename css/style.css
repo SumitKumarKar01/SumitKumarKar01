@@ -101,6 +101,8 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   z-index: 1000;
   padding-top: 80px;
 }
@@ -189,6 +191,7 @@ nav a:hover {
    text-decoration: none;
   padding: 12px 24px;
   border: 2px solid #2c3e50;
+  border-radius: 8px;
   background: transparent;
   color: #2c3e50;
   font-weight: 500;
@@ -271,11 +274,17 @@ nav a:hover {
   flex: 1;
   background: #fff;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ddd;
+  border-radius: 12px;
   margin: 0 2rem;
   position: relative;
   border-left: 4px solid #2c3e50;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .experience-content h3 {
@@ -339,6 +348,7 @@ nav a:hover {
   border: 2px solid #ddd;
   padding: 2rem;
   background: #fff;
+  border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
@@ -665,6 +675,53 @@ nav a:hover {
 .photography {
   padding: 3rem 0;
 }
+
+.photo-gallery-container {
+  position: relative;
+  display: block;
+}
+
+.photo-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+  backdrop-filter: blur(5px);
+}
+
+.photo-nav-btn:hover {
+  background: #2c3e50;
+  color: white;
+  transform: translateY(-50%) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.photo-nav-btn:active {
+  transform: translateY(-50%);
+}
+
+.photo-nav-btn i {
+  font-size: 1.2rem;
+}
+
+.photo-nav-prev {
+  left: 10px; /* Position to partially overlap first card */
+}
+
+.photo-nav-next {
+  right: 10px; /* Same distance as left button */
+}
 .photography-container {
   display: flex;
   justify-content: space-between;
@@ -677,13 +734,101 @@ nav a:hover {
 }
 .photo-grid {
   display: flex;
-  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1.5rem;
+  margin: 0rem 3rem; /* Further increased left padding for more spacing */
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  user-select: none; /* Prevent text selection while dragging */
+  scroll-behavior: smooth; /* Smooth scrolling for navigation buttons */
+  transition: transform 0.3s ease;
 }
+
+.photo-grid.bounce-left {
+  animation: bounceLeft 0.4s ease-out;
+}
+
+.photo-grid.bounce-right {
+  animation: bounceRight 0.4s ease-out;
+}
+
+@keyframes bounceLeft {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(40px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bounceRight {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-40px); }
+  100% { transform: translateX(0); }
+}
+
+.photo-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.photo-grid.dragging {
+  scroll-snap-type: none; /* Disable snap while dragging */
+}
+
+.photo-grid.dragging .photo-card {
+  pointer-events: none; /* Prevent hover effects while dragging */
+}
+
+.photo-card {
+  flex: 0 0 320px; /* Fixed width that ensures scrolling is needed */
+  min-width: 320px; /* Ensure minimum width is maintained */
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  margin: 1rem 0rem;
+}
+
+.photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
 .photo-placeholder {
-  width: 150px;
-  height: 120px;
+  width: calc(100% - 2rem);
+  height: 220px; /* Consistent height across all devices */
+  margin: 1rem;
   border: 2px solid #ddd;
   background: #f8f9fa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.photo-placeholder::before {
+  content: "Image Preview";
+}
+
+.photo-caption {
+  padding: 1.5rem;
+}
+
+.photo-caption h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.photo-caption p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
 }
 .read-more-container {
   display: flex;
@@ -745,11 +890,39 @@ nav a:hover {
     flex-direction: column;
     gap: 2rem;
   }
-  .photo-grid {
+  
+  .photo-gallery-container {
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
   }
+  
+  .photo-grid {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .photo-card {
+    flex: 0 0 calc(100vw - 5rem); /* Show most of one card with peek of next */
+    max-width: 280px;
+  }
+  
+  .photo-placeholder {
+    height: 220px; /* Same height as desktop */
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+  
+  .photo-caption {
+    padding: 1.5rem;
+  }
+  
+  .photo-caption h4 {
+    font-size: 1rem;
+  }
+  
+  .photo-caption p {
+    font-size: 0.85rem;
+  }
+  
   .read-more-container {
     justify-content: center;
   }
@@ -810,17 +983,43 @@ nav a:hover {
   }
 }
 @media (max-width: 480px) {
+  /* Hide navigation buttons on small mobile devices */
+  .photo-nav-btn {
+    display: none;
+  }
+
   .container {
     padding: 0 15px;
   }
+  
   .photo-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .photo-placeholder {
-    width: 200px;
-    height: 150px;
+    padding: 0 0.5rem;
   }
   
+  .photo-card {
+    flex: 0 0 calc(100vw - 4rem); /* Show one card with small peek of next */
+    max-width: 250px;
+  }
+  
+  .photo-placeholder {
+    height: 220px; /* Same height as desktop and tablet */
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+  
+  .photo-caption {
+    padding: 1.5rem;
+  }
+  
+  .photo-caption h4 {
+    font-size: 0.9rem;
+  }
+  
+  .photo-caption p {
+    font-size: 0.8rem;
+  }
+  .photo-grid {
+  margin: 0rem; /* Further increased left padding for more spacing */
+}
 }
     
