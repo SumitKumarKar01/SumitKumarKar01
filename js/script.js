@@ -89,3 +89,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Photo gallery navigation function
+function scrollPhotoGallery(direction) {
+  const photoGrid = document.querySelector('.photo-grid');
+  if (!photoGrid) return;
+  
+  const cardWidth = photoGrid.querySelector('.photo-card').offsetWidth;
+  const gap = 24; // 1.5rem = 24px
+  const scrollAmount = cardWidth + gap;
+  
+  // Check current scroll position
+  const currentScroll = photoGrid.scrollLeft;
+  const maxScroll = photoGrid.scrollWidth - photoGrid.clientWidth;
+  
+  if (direction === 'left') {
+    if (currentScroll <= 0) {
+      // At the beginning, trigger bounce animation
+      photoGrid.classList.add('bounce-left');
+      setTimeout(() => photoGrid.classList.remove('bounce-left'), 400);
+      return;
+    }
+    
+    photoGrid.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  } else if (direction === 'right') {
+    if (currentScroll >= maxScroll) {
+      // At the end, trigger bounce animation
+      photoGrid.classList.add('bounce-right');
+      setTimeout(() => photoGrid.classList.remove('bounce-right'), 400);
+      return;
+    }
+    
+    photoGrid.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+}

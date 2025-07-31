@@ -675,6 +675,53 @@ nav a:hover {
 .photography {
   padding: 3rem 0;
 }
+
+.photo-gallery-container {
+  position: relative;
+  display: block;
+}
+
+.photo-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+  backdrop-filter: blur(5px);
+}
+
+.photo-nav-btn:hover {
+  background: #2c3e50;
+  color: white;
+  transform: translateY(-50%) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.photo-nav-btn:active {
+  transform: translateY(-50%);
+}
+
+.photo-nav-btn i {
+  font-size: 1.2rem;
+}
+
+.photo-nav-prev {
+  left: 10px; /* Position to partially overlap first card */
+}
+
+.photo-nav-next {
+  right: 10px; /* Same distance as left button */
+}
 .photography-container {
   display: flex;
   justify-content: space-between;
@@ -690,11 +737,33 @@ nav a:hover {
   overflow-x: auto;
   overflow-y: hidden;
   gap: 1.5rem;
-  padding: 0 1rem;
+  margin: 0rem 3rem; /* Further increased left padding for more spacing */
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   user-select: none; /* Prevent text selection while dragging */
+  scroll-behavior: smooth; /* Smooth scrolling for navigation buttons */
+  transition: transform 0.3s ease;
+}
+
+.photo-grid.bounce-left {
+  animation: bounceLeft 0.4s ease-out;
+}
+
+.photo-grid.bounce-right {
+  animation: bounceRight 0.4s ease-out;
+}
+
+@keyframes bounceLeft {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(40px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bounceRight {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-40px); }
+  100% { transform: translateX(0); }
 }
 
 .photo-grid::-webkit-scrollbar {
@@ -821,6 +890,11 @@ nav a:hover {
     flex-direction: column;
     gap: 2rem;
   }
+  
+  .photo-gallery-container {
+    justify-content: center;
+  }
+  
   .photo-grid {
     gap: 1rem;
     padding: 0 1rem;
@@ -848,6 +922,7 @@ nav a:hover {
   .photo-caption p {
     font-size: 0.85rem;
   }
+  
   .read-more-container {
     justify-content: center;
   }
@@ -908,6 +983,11 @@ nav a:hover {
   }
 }
 @media (max-width: 480px) {
+  /* Hide navigation buttons on small mobile devices */
+  .photo-nav-btn {
+    display: none;
+  }
+
   .container {
     padding: 0 15px;
   }
@@ -938,5 +1018,8 @@ nav a:hover {
   .photo-caption p {
     font-size: 0.8rem;
   }
+  .photo-grid {
+  margin: 0rem; /* Further increased left padding for more spacing */
+}
 }
     
