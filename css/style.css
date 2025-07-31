@@ -796,9 +796,9 @@ nav a:hover {
 }
 
 .photo-placeholder {
-  width: calc(100% - 2rem);
-  height: 220px; /* Consistent height across all devices */
-  margin: 1rem;
+  width: calc(100% - 2rem); /* Fill card width minus consistent spacing */
+  height: 200px; /* Fixed height for consistent image sizing */
+  margin: 1rem; /* Consistent 1rem spacing on all sides */
   border: 2px solid #ddd;
   background: #f8f9fa;
   border-radius: 10px;
@@ -905,12 +905,6 @@ nav a:hover {
     max-width: 280px;
   }
   
-  .photo-placeholder {
-    height: 220px; /* Same height as desktop */
-    margin: 1rem;
-    width: calc(100% - 2rem);
-  }
-  
   .photo-caption {
     padding: 1.5rem;
   }
@@ -999,12 +993,6 @@ nav a:hover {
   .photo-card {
     flex: 0 0 calc(100vw - 4rem); /* Show one card with small peek of next */
     max-width: 250px;
-  }
-  
-  .photo-placeholder {
-    height: 220px; /* Same height as desktop and tablet */
-    margin: 1rem;
-    width: calc(100% - 2rem);
   }
   
   .photo-caption {
