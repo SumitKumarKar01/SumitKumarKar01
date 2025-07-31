@@ -14,6 +14,7 @@ function toggleMobileMenu() {
     menuToggle.classList.remove('hide');
   }
 }
+
 function closeMobileMenu() {
   const mobileNav = document.getElementById('mobileNav');
   const mobileBackdrop = document.getElementById('mobileBackdrop');
@@ -24,11 +25,58 @@ function closeMobileMenu() {
   closeToggle.classList.remove('show');
   menuToggle.classList.remove('hide');
 }
+
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeMobileMenu();
   }
 });
+
+// Rotating social platform icon with enhanced effects
+function initializeRotatingPlatform() {
+  const platformLinks = document.querySelectorAll('.rotating-platform .platform-link');
+  const rotatingPlatform = document.querySelector('.rotating-platform');
+  let currentIndex = 0;
+  let rotationInterval;
+  let isPaused = false;
+  
+  function rotatePlatform() {
+    if (isPaused) return;
+    
+    // Remove active class from current icon
+    platformLinks[currentIndex].classList.remove('active');
+    
+    // Move to next icon
+    currentIndex = (currentIndex + 1) % platformLinks.length;
+    
+    // Add active class to new icon with slight delay for smooth transition
+    setTimeout(() => {
+      platformLinks[currentIndex].classList.add('active');
+    }, 100);
+  }
+  
+  function startRotation() {
+    rotationInterval = setInterval(rotatePlatform, 2500);
+  }
+  
+  function pauseRotation() {
+    isPaused = true;
+  }
+  
+  function resumeRotation() {
+    isPaused = false;
+  }
+  
+  // Add hover event listeners
+  if (rotatingPlatform) {
+    rotatingPlatform.addEventListener('mouseenter', pauseRotation);
+    rotatingPlatform.addEventListener('mouseleave', resumeRotation);
+  }
+  
+  // Start rotation
+  startRotation();
+}
+
 // Add scroll effect for mobile header
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
@@ -41,6 +89,9 @@ window.addEventListener('scroll', function() {
 
 // Drag to scroll functionality for photo gallery
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize rotating platform
+  initializeRotatingPlatform();
+  
   const photoGrid = document.querySelector('.photo-grid');
   
   if (photoGrid) {
