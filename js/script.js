@@ -77,9 +77,11 @@ function initializeRotatingPlatform() {
   startRotation();
 }
 
-// Add scroll effect for mobile header
+// Add scroll effect for header shadow
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
+  
+  // Add scrolled class for box-shadow effect
   if (window.scrollY > 50) {
     header.classList.add('scrolled');
   } else {
