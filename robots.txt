@@ -7,7 +7,8 @@ Allow: /js/
 # Sitemap
 Sitemap: https://sumit.com.bd/sitemap.xml
 
-# Optional: Block access to certain files
+# Block access to certain files and directories
 Disallow: /.git/ 
 Disallow: /CNAME
 Disallow: /assets/
+Disallow: *.pdf
