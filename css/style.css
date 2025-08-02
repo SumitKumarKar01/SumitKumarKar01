@@ -1235,6 +1235,10 @@ nav a:hover {
     flex-direction: column;
     gap: 2rem;
   }
+  .hero {
+  padding: 6rem 0 !important;
+  text-align: center;
+  }
   .hero-content {
     height: auto;
   }
