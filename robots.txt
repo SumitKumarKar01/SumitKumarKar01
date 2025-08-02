@@ -10,3 +10,4 @@ Sitemap: https://sumit.com.bd/sitemap.xml
 # Optional: Block access to certain files
 Disallow: /.git/ 
 Disallow: /CNAME
+Disallow: /assets/
