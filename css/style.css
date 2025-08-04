@@ -61,6 +61,12 @@ h1 {
   font-size: 2rem;
 }
 
+h2 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -371,11 +377,7 @@ nav a:hover {
   height: 2px;
   background-color: var(--border-secondary);
 }
-.section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--text-primary);
-}
+
 .section-header {
   margin-bottom: 2rem;
 }
@@ -881,11 +883,7 @@ nav a:hover {
   justify-content: space-between;
   align-items: flex-start;
 }
-.photography h2 {
-  font-size: 2.5rem;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-}
+
 .photo-grid {
   display: flex;
   overflow-x: auto;
