@@ -3,6 +3,8 @@ Allow: /README.md
 Allow: /index.html
 Allow: /css/
 Allow: /js/
+Allow: /favicon.svg
+Allow: /favicon.ico
 
 # Sitemap
 Sitemap: https://sumit.com.bd/sitemap.xml
