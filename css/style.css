@@ -33,6 +33,45 @@
   --published-bg: #2c3e50;
   --published-text: #fff;
   --coming-soon-bg: #666;
+  
+  /* Theme Toggle Colors */
+  --theme-icon-color: #ffd700;
+  --theme-icon-light-mode: #f39c12;
+}
+
+/* Dark mode variables - activated when checkbox is checked */
+body:has(#theme-switch:checked) {
+  /* Primary Colors */
+  --primary-color: #e1e8ed;
+  --primary-hover: #f5f8fa;
+  --accent-color: #4a9eff;
+  
+  /* Background Colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-overlay: rgba(26, 26, 26, 0.95);
+  --bg-backdrop: rgba(255, 255, 255, 0.1);
+  
+  /* Text Colors */
+  --text-primary: #e1e8ed;
+  --text-secondary: #a1a1a1;
+  --text-hover: #1a1a1a;
+  
+  /* Border Colors */
+  --border-primary: #404040;
+  --border-secondary: #3a3a3a;
+  --border-accent: #e1e8ed;
+  
+  /* Shadow Colors */
+  --shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Social Media Colors - adjusted for dark mode */
+  --github-color: #e1e8ed;
+  
+  /* Status Colors */
+  --published-bg: #e1e8ed;
+  --published-text: #1a1a1a;
+  --coming-soon-bg: #a1a1a1;
 }
 
 * {
@@ -54,7 +93,8 @@ body {
   background-color: var(--bg-primary);
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Move overflow-x to body only */
+  overflow-x: hidden; 
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -79,12 +119,13 @@ a {
 header {
   background: var(--bg-primary);
   box-shadow: 0 2px 5px var(--shadow);
-  position: -webkit-sticky; /* Safari support */
+  position: -webkit-sticky; 
   position: sticky;
   top: 0;
   z-index: 100;
   width: 100%;
-  will-change: transform; /* Optimize for position changes */
+  will-change: transform; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 nav {
   display: flex;
@@ -108,7 +149,7 @@ nav a:hover {
 }
 .mobile-menu-toggle,
 .mobile-close-toggle {
-  display: none; /* Hidden by default on desktop */
+  display: none; 
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -124,8 +165,8 @@ nav a:hover {
   background: transparent;
   border: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent; /* For Chrome/Safari on Android */
-  -webkit-touch-callout: none;             /* Prevents callout menu on long tap */
+  -webkit-tap-highlight-color: transparent; 
+  -webkit-touch-callout: none;             
   user-select: none;
 }
 .mobile-menu-toggle span {
@@ -202,6 +243,127 @@ nav a:hover {
 }
 .mobile-backdrop.active {
   display: block;
+}
+
+/* CSS-Only Theme Toggle Styles */
+.theme-toggle {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 101;
+}
+
+.theme-switch {
+  display: none; 
+}
+
+.theme-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent; 
+  border: none; 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease; 
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.theme-label:hover {
+  background: var(--accent-color); 
+  border-radius: 50%;
+  transform: scale(1.1);
+}
+
+.theme-icon-light,
+.theme-icon-dark {
+  position: absolute;
+  font-size: 1.4rem; 
+  font-weight: 600; 
+  color: var(--theme-icon-color); 
+  transition: all 0.4s ease; 
+}
+
+.theme-label:hover .theme-icon-light,
+.theme-label:hover .theme-icon-dark {
+  color: var(--text-hover);
+  transform: rotate(360deg); 
+}
+
+/* Show sun icon by default (light mode) */
+.theme-icon-light {
+  opacity: 1;
+  visibility: visible;
+  color: var(--theme-icon-light-mode); 
+}
+
+.theme-icon-dark {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* When checkbox is checked (dark mode), show moon and hide sun */
+.theme-switch:checked + .theme-label .theme-icon-light {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.theme-switch:checked + .theme-label .theme-icon-dark {
+  opacity: 1;
+  visibility: visible;
+  color: var(--theme-icon-color); 
+}
+
+.theme-switch:checked + .theme-label:hover .theme-icon-dark {
+  color: #fff;
+}
+
+/* Remove hover effects on touch devices to prevent sticky hover states */
+@media (hover: none) and (pointer: coarse) {
+  .theme-label:hover {
+    background: transparent; 
+    transform: none;
+  }
+  
+  .theme-label:hover .theme-icon-light,
+  .theme-label:hover .theme-icon-dark {
+    transform: none;
+  }
+  
+  .theme-label:hover .theme-icon-light {
+    color: var(--theme-icon-light-mode); 
+  }
+  
+  .theme-label:hover .theme-icon-dark {
+    color: var(--theme-icon-color); 
+  }
+  
+  .theme-switch:checked + .theme-label:hover .theme-icon-dark {
+    color: var(--theme-icon-color); 
+  }
+  
+  /* Add a subtle active state for touch feedback */
+  .theme-label:active {
+    background: var(--accent-color); 
+    border-radius: 50%;
+    transform: scale(0.95);
+    transition: all 0.2s ease; 
+  }
+  
+  .theme-label:active .theme-icon-light,
+  .theme-label:active .theme-icon-dark {
+    color: var(--text-hover);
+    transform: rotate(180deg); 
+  }
+  
+  .theme-switch:checked + .theme-label:active .theme-icon-dark {
+    color: #fff;
+  }
 }
 .hero {
   padding: 8rem 0 !important;
@@ -903,11 +1065,11 @@ nav a:hover {
 }
 
 .photo-nav-prev {
-  left: 10px; /* Position to partially overlap first card */
+  left: 10px; 
 }
 
 .photo-nav-next {
-  right: 10px; /* Same distance as left button */
+  right: 10px; 
 }
 .photography-container {
   display: flex;
@@ -920,12 +1082,12 @@ nav a:hover {
   overflow-x: auto;
   overflow-y: hidden;
   gap: 1.5rem;
-  margin: 0rem 3rem; /* Further increased left padding for more spacing */
+  margin: 0rem 3rem; 
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  user-select: none; /* Prevent text selection while dragging */
-  scroll-behavior: smooth; /* Smooth scrolling for navigation buttons */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  user-select: none; 
+  scroll-behavior: smooth; 
   transition: transform 0.3s ease;
 }
 
@@ -950,20 +1112,20 @@ nav a:hover {
 }
 
 .photo-grid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
 
 .photo-grid.dragging {
-  scroll-snap-type: none; /* Disable snap while dragging */
+  scroll-snap-type: none; 
 }
 
 .photo-grid.dragging .photo-card {
-  pointer-events: none; /* Prevent hover effects while dragging */
+  pointer-events: none; 
 }
 
 .photo-card {
-  flex: 0 0 320px; /* Fixed width that ensures scrolling is needed */
-  min-width: 320px; /* Ensure minimum width is maintained */
+  flex: 0 0 320px; 
+  min-width: 320px; 
   background: var(--bg-primary);
   border: 2px solid var(--border-primary);
   border-radius: 12px;
@@ -979,12 +1141,12 @@ nav a:hover {
 }
 
 .gallery-image {
-  width: calc(100% - 2rem); /* Fill card width minus consistent spacing */
-  height: 200px; /* Fixed height for consistent image sizing */
-  margin: 1rem; /* Consistent 1rem spacing on all sides */
+  width: calc(100% - 2rem); 
+  height: 200px; 
+  margin: 1rem; 
   border: 2px solid var(--border-primary);
   border-radius: 10px;
-  object-fit: cover; /* Ensure images fit properly within the container */
+  object-fit: cover; 
 }
 
 .photo-caption {
@@ -1285,6 +1447,23 @@ nav a:hover {
   .mobile-close-toggle.show {
     display: flex;
   }
+  
+  /* Theme toggle mobile positioning */
+  .theme-toggle {
+    right: 20px; 
+  }
+  
+  .theme-label {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .theme-icon-light,
+  .theme-icon-dark {
+    font-size: 1.2rem; 
+    font-weight: 600;
+  }
+  
   .mobile-nav.active {
     display: block;
   }
@@ -1351,7 +1530,7 @@ nav a:hover {
   }
   
   .photo-card {
-    flex: 0 0 min(calc(100vw - 5rem), 280px); /* Show most of one card with peek of next */
+    flex: 0 0 min(calc(100vw - 5rem), 280px); 
     max-width: 280px;
   }
   
@@ -1535,7 +1714,7 @@ nav a:hover {
   }
   
   .photo-card {
-    flex: 0 0 min(calc(100vw - 4rem), 250px); /* Show one card with small peek of next */
+    flex: 0 0 min(calc(100vw - 4rem), 250px); 
     max-width: 250px;
   }
   
@@ -1551,7 +1730,7 @@ nav a:hover {
     font-size: 0.8rem;
   }
   .photo-grid {
-  margin: 0rem; /* Further increased left padding for more spacing */
+  margin: 0rem; 
 }
 }
     
