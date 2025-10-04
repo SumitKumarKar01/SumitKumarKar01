@@ -451,10 +451,19 @@ nav a:hover {
 }
 
 .experience-content h4 {
-  color: var(--text-primary);
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: 500;
+}
+
+.experience-content a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.experience-content a:hover {
+  color: var(--accent-color);
 }
 
 .experience-content p {
