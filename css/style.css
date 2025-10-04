@@ -42,36 +42,38 @@
 /* Dark mode variables - activated when checkbox is checked */
 body:has(#theme-switch:checked) {
   /* Primary Colors */
-  --primary-color: #e1e8ed;
-  --primary-hover: #f5f8fa;
-  --accent-color: #4a9eff;
+  --primary-color: #58a6ff;
+  --primary-hover: #ffffff;
+  --accent-color: #58a6ff;
   
   /* Background Colors */
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-overlay: rgba(26, 26, 26, 0.95);
-  --bg-backdrop: rgba(255, 255, 255, 0.1);
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-overlay: rgba(13, 17, 23, 0.95);
+  --bg-backdrop: rgba(255, 255, 255, 0.05);
   
   /* Text Colors */
-  --text-primary: #e1e8ed;
-  --text-secondary: #a1a1a1;
-  --text-hover: #1a1a1a;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-hover: #0d1117;
   
   /* Border Colors */
-  --border-primary: #404040;
-  --border-secondary: #3a3a3a;
-  --border-accent: #e1e8ed;
+  --border-primary: #30363d;
+  --border-secondary: #21262d;
+  --border-accent: #58a6ff;
   
   /* Shadow Colors */
-  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow: rgba(0, 0, 0, 0.45);
   
   /* Social Media Colors - adjusted for dark mode */
-  --github-color: #e1e8ed;
+  --github-color: #f0f6fc;
+  --linkedin-color: #0a66c2;
+  --facebook-color: #1877f2;
   
   /* Status Colors */
-  --published-bg: #e1e8ed;
-  --published-text: #1a1a1a;
-  --coming-soon-bg: #a1a1a1;
+  --published-bg: #58a6ff;
+  --published-text: #0d1117;
+  --coming-soon-bg: #6e7681;
 }
 
 * {
@@ -511,7 +513,7 @@ nav a:hover {
 }
 .btn,
 .see-more-btn {
-   text-decoration: none;
+  text-decoration: none;
   padding: 12px 24px;
   border: 2px solid var(--border-accent);
   border-radius: 8px;
