@@ -1456,13 +1456,13 @@ nav a:hover {
   }
   
   .theme-label {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
   
   .theme-icon-light,
   .theme-icon-dark {
-    font-size: 1.2rem; 
+    font-size: 1.75rem; 
     font-weight: 600;
   }
   
