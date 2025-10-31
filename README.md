@@ -4,8 +4,9 @@
 - I love learning about new technologies 💻
 
 ## My Research Papers
-- [A Novel Approach for Recognizing Real-Time American Sign Language (ASL) Using the Hand Landmark Distance and Machine Learning Algorithms](https://doi.org/10.1109/wiecon-ece60392.2023.10456414)
+- [Meena Needs a Computer Now: Co-design Solutions to Barriers using Fictional Inquiry for Women in Computing](https://doi.org/10.1145/3762808)
 - [Rokkha: Enabling Offline Emergency Location Sharing via SMS](https://doi.org/10.1145/3723178.3723190)
+- [A Novel Approach for Recognizing Real-Time American Sign Language (ASL) Using the Hand Landmark Distance and Machine Learning Algorithms](https://doi.org/10.1109/wiecon-ece60392.2023.10456414)
 
 ## My Projects
 ### [Rokkha](http://rokkha.sumit.com.bd)
