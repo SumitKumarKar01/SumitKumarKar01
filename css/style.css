@@ -39,46 +39,7 @@
   --theme-icon-light-mode: #f39c12;
 }
 
-/* Dark mode variables - activated by system preference OR manual toggle */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Primary Colors */
-    --primary-color: #58a6ff;
-    --primary-hover: #ffffff;
-    --accent-color: #58a6ff;
-    
-    /* Background Colors */
-    --bg-primary: #0d1117;
-    --bg-secondary: #161b22;
-    --bg-overlay: rgba(13, 17, 23, 0.95);
-    --bg-backdrop: rgba(255, 255, 255, 0.05);
-    
-    /* Text Colors */
-    --text-primary: #f0f6fc;
-    --text-secondary: #8b949e;
-    --text-hover: #0d1117;
-    
-    /* Border Colors */
-    --border-primary: #30363d;
-    --border-secondary: #21262d;
-    --border-accent: #58a6ff;
-    
-    /* Shadow Colors */
-    --shadow: rgba(0, 0, 0, 0.45);
-    
-    /* Social Media Colors - adjusted for dark mode */
-    --github-color: #f0f6fc;
-    --linkedin-color: #0a66c2;
-    --facebook-color: #1877f2;
-    
-    /* Status Colors */
-    --published-bg: #58a6ff;
-    --published-text: #0d1117;
-    --coming-soon-bg: #6e7681;
-  }
-}
-
-/* Manual dark mode override - when toggle is checked */
+/* Dark mode variables - activated when checkbox is checked */
 body:has(#theme-switch:checked) {
   /* Primary Colors */
   --primary-color: #58a6ff;
@@ -113,45 +74,6 @@ body:has(#theme-switch:checked) {
   --published-bg: #58a6ff;
   --published-text: #0d1117;
   --coming-soon-bg: #6e7681;
-}
-
-/* Light mode override - when toggle is unchecked in dark system */
-@media (prefers-color-scheme: dark) {
-  body:has(#theme-switch:not(:checked)) {
-    /* Primary Colors */
-    --primary-color: #2c3e50;
-    --primary-hover: #1a252f;
-    --accent-color: #007bff;
-    
-    /* Background Colors */
-    --bg-primary: #fff;
-    --bg-secondary: #f8f9fa;
-    --bg-overlay: rgba(255, 255, 255, 0.95);
-    --bg-backdrop: rgba(0, 0, 0, 0.3);
-    
-    /* Text Colors */
-    --text-primary: #2c3e50;
-    --text-secondary: #666;
-    --text-hover: #fff;
-    
-    /* Border Colors */
-    --border-primary: #ddd;
-    --border-secondary: #e9ecef;
-    --border-accent: #2c3e50;
-    
-    /* Shadow Colors */
-    --shadow: rgba(0, 0, 0, 0.15);
-    
-    /* Social Media Colors */
-    --github-color: #333;
-    --linkedin-color: #0077b5;
-    --facebook-color: #1877f2;
-    
-    /* Status Colors */
-    --published-bg: #2c3e50;
-    --published-text: #fff;
-    --coming-soon-bg: #666;
-  }
 }
 
 * {
@@ -325,7 +247,7 @@ nav a:hover {
   display: block;
 }
 
-/* CSS-Only Theme Toggle Styles - Works with system preference by default */
+/* CSS-Only Theme Toggle Styles */
 .theme-toggle {
   position: absolute;
   top: 50%;
@@ -375,57 +297,28 @@ nav a:hover {
   transform: rotate(360deg); 
 }
 
-/* System theme preference handling */
-@media (prefers-color-scheme: light) {
-  /* Show sun icon by default in light system theme */
-  .theme-icon-light {
-    opacity: 1;
-    visibility: visible;
-    color: var(--theme-icon-light-mode); 
-  }
-  
-  .theme-icon-dark {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  /* When manually switched to dark in light system */
-  .theme-switch:checked + .theme-label .theme-icon-light {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .theme-switch:checked + .theme-label .theme-icon-dark {
-    opacity: 1;
-    visibility: visible;
-    color: var(--theme-icon-color); 
-  }
+/* Show sun icon by default (light mode) */
+.theme-icon-light {
+  opacity: 1;
+  visibility: visible;
+  color: var(--theme-icon-light-mode); 
 }
 
-@media (prefers-color-scheme: dark) {
-  /* Show moon icon by default in dark system theme */
-  .theme-icon-light {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .theme-icon-dark {
-    opacity: 1;
-    visibility: visible;
-    color: var(--theme-icon-color); 
-  }
-  
-  /* When manually switched to light in dark system */
-  .theme-switch:checked + .theme-label .theme-icon-light {
-    opacity: 1;
-    visibility: visible;
-    color: var(--theme-icon-light-mode); 
-  }
-  
-  .theme-switch:checked + .theme-label .theme-icon-dark {
-    opacity: 0;
-    visibility: hidden;
-  }
+.theme-icon-dark {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* When checkbox is checked (dark mode), show moon and hide sun */
+.theme-switch:checked + .theme-label .theme-icon-light {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.theme-switch:checked + .theme-label .theme-icon-dark {
+  opacity: 1;
+  visibility: visible;
+  color: var(--theme-icon-color); 
 }
 
 .theme-switch:checked + .theme-label:hover .theme-icon-dark {
@@ -452,6 +345,10 @@ nav a:hover {
     color: var(--theme-icon-color); 
   }
   
+  .theme-switch:checked + .theme-label:hover .theme-icon-dark {
+    color: var(--theme-icon-color); 
+  }
+  
   /* Add a subtle active state for touch feedback */
   .theme-label:active {
     background: var(--accent-color); 
@@ -465,9 +362,11 @@ nav a:hover {
     color: var(--text-hover);
     transform: rotate(180deg); 
   }
+  
+  .theme-switch:checked + .theme-label:active .theme-icon-dark {
+    color: #fff;
+  }
 }
-
-
 .hero {
   padding: 8rem 0 !important;
   text-align: center;
@@ -1551,7 +1450,21 @@ nav a:hover {
     display: flex;
   }
   
-
+  /* Theme toggle mobile positioning */
+  .theme-toggle {
+    right: 20px; 
+  }
+  
+  .theme-label {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .theme-icon-light,
+  .theme-icon-dark {
+    font-size: 1.75rem; 
+    font-weight: 600;
+  }
   
   .mobile-nav.active {
     display: block;
