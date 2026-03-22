@@ -9,7 +9,7 @@ Allow: /favicon-96x96.png
 
 
 # Sitemap
-Sitemap: https://sumit.com.bd/sitemap.xml
+Sitemap: https://sumit.bd/sitemap.xml
 
 # Block access to certain files and directories
 Disallow: /.git/ 

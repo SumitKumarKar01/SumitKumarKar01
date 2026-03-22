@@ -8,7 +8,7 @@
 - [Rokkha: Enabling Offline Emergency Location Sharing via SMS](https://doi.org/10.1145/3723178.3723190)
 
 ## My Projects
-### [Rokkha](http://rokkha.sumit.com.bd)
+### [Rokkha](http://rokkha.sumit.bd)
 
 - Utilized the GPS sensor in Android devices to collect location data without relying on internet connectivity.
 - Implemented the Android SMS API to send location information.
@@ -16,7 +16,7 @@
 - Technology Used: Kotlin, Android XML, SQLite.
 - [Github](https://github.com/SumitKumarKar01/Rokkha) [Research Paper](https://dl.acm.org/doi/pdf/10.1145/3723178.3723190)
 
-### [Nari](http://nari.sumit.com.bd)
+### [Nari](http://nari.sumit.bd)
 
 - Developed the app using Kotlin, ensuring concise syntax and enhanced safety for clean and efficient code.
 - Integrated Firebase Authentication for secure user login and registration processes.
