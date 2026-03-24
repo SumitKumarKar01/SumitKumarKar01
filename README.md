@@ -66,7 +66,7 @@
 - Microsoft Office Suite
 -->
 
-## My 2025 Goals
+## My 20266 Goals
 - Learn About LLM and RAG.
 - Create Cross Platform Applications
 - Dive into Web Applications
