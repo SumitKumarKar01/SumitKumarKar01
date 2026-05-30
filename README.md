@@ -1,14 +1,17 @@
 ## About Me
+
 - 👋 Hi, I’m Sumit Kumar Kar
 - CSE Graduate🎓 | Research Assistant🔬 | Android Developer📱
 - I love learning about new technologies 💻
 
 ## My Research Papers
+
 - [Meena Needs a Computer Now: Co-design Solutions to Barriers using Fictional Inquiry for Women in Computing](https://doi.org/10.1145/3762808)
 - [Rokkha: Enabling Offline Emergency Location Sharing via SMS](https://doi.org/10.1145/3723178.3723190)
 - [A Novel Approach for Recognizing Real-Time American Sign Language (ASL) Using the Hand Landmark Distance and Machine Learning Algorithms](https://doi.org/10.1109/wiecon-ece60392.2023.10456414)
 
 ## My Projects
+
 ### [Rokkha](http://rokkha.sumit.bd)
 
 - Utilized the GPS sensor in Android devices to collect location data without relying on internet connectivity.
@@ -24,8 +27,9 @@
 - Employed Firebase Firestore for flexible data management and real-time database functionalities.
 - Technology Used: Kotlin, Jetpack Compose, Material Design 3, Rooms, Firebase, SQLite.
 - [Github](https://github.com/SumitKumarKar01/Nari)
-  
+
 ## My Skills
+
 ![My Skills](https://skillicons.dev/icons?i=c,cpp,java,kotlin,python,html,css,js,mysql,sqlite,php)
 
 <!--
@@ -44,6 +48,7 @@
 -->
 
 ## Technologies I Learnt
+
 ![My Skills](https://skillicons.dev/icons?i=git,github,md,latex,anaconda)
 
 <!--
@@ -66,21 +71,22 @@
 - Microsoft Office Suite
 -->
 
-## My 20266 Goals
+## My 2026 Goals
+
+- Learn About Data Science
 - Learn About LLM and RAG.
 - Create Cross Platform Applications
 - Dive into Web Applications
 
-
 ## Connect with Me
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/sumitkumarkar01)](https://www.linkedin.com/in/sumitkumarkar01)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/SumitKumarKar01)](https://github.com/SumitKumarKar01)
 [![KAGGLE](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white&link=https://www.kaggle.com/sumitkumarkar01)](https://www.kaggle.com/sumitkumarkar01)
-[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white&link=https://scholar.google.com/citations?user=VuS2jpUAAAAJ&hl=en)](https://scholar.google.com/citations?user=VuS2jpUAAAAJ&hl=en)  
+[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white&link=https://scholar.google.com/citations?user=VuS2jpUAAAAJ&hl=en)](https://scholar.google.com/citations?user=VuS2jpUAAAAJ&hl=en)
 [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white&link=https://www.researchgate.net/profile/Sumit-Kumar-Kar-3)](https://www.researchgate.net/profile/Sumit-Kumar-Kar-3)
 [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white&link=https://orcid.org/0009-0000-9469-3108)](https://orcid.org/0009-0000-9469-3108)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:sumitkumarkar01@gmail.com)](mailto:sumitkumarkar01@gmail.com)
-
 
 <!---
 SumitKumarKar01/SumitKumarKar01 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
